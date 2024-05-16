@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository contains the source code for a custom NX AI Manager postprocessor and a tiny HTTP server that displays results from a model trained on [Teachable Machine](https://teachablemachine.withgoogle.com/train).
+This repository contains the source code for a custom NX AI Manager postprocessor and a tiny Python HTTP server that servers a live webpage displaying the results from a Gauge model trained on [Teachable Machine](https://teachablemachine.withgoogle.com/train).
 
 For more information on deploying a Teachable Machine model to an edge device running an NX Server, visit the [NX documentation](https://nx.docs.scailable.net/for-data-scientists/importing-models/from-teachable-machine).
 
