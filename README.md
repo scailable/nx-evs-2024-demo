@@ -32,6 +32,7 @@ To learn more about custom NX AI Manager postprocessors, see the [Scailable Inte
     ```bash
     ./2_start_api.sh
     ```
+7. Go to port :8888 at the ip address of the Raspberry Pi with a browser (nicest is to use the browser within Nx Client).
     
 https://github.com/scailable/nx-evs-2024-demo/assets/95014/fa2cb534-9c34-425b-8dd3-298834821861
 
