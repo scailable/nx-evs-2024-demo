@@ -14,6 +14,11 @@ To learn more about custom NX AI Manager postprocessors, see the [Scailable Inte
 - Webcam
 - NX Meta Server
 - NX Meta Client
+- Software:
+    - Cmake
+    - Python 3
+    - Pip
+    - Python3-dev
 
 ## Instructions
 
