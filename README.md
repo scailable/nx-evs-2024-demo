@@ -17,13 +17,12 @@ To learn more about custom NX AI Manager postprocessors, see the [Scailable Inte
 - Software:
     - Cmake
     - Python 3
-    - Pip
-    - Python3-dev
 ```bash
 sudo apt install cmake
 sudo apt install python3.11-venv
 sudo apt install python3.11-dev
 ```
+(If you have Python3.12 installed, you'll need to install `python3.12-venv` & `python3.12-dev` instead)
 
 ## Instructions
 
