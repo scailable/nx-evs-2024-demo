@@ -65,29 +65,21 @@ def main():
         # Parse input message
         input_object = communication_utils.parseInferenceResults(input_message)
 
-        # Add extra bbox
-
         try:
             scores = input_object['Scores']
             print(f'Postprocessor -  Found scores: {scores}')
 
-            # Step 1: Parse the string to extract the class names and their scores
-            #scores = "{'Class 1': 0.0003794431977439672, 'Class 2': 1.0930746157100657e-06, 'Class 3': 2.760653785571776e-07, 'Class 4': 0.9996192455291748}"
-            pattern = re.compile(r"'Class (\d+)': ([\d.e-]+)")
-            matches = pattern.findall(str(scores))
+            # Step 1: Read number of score values
+            # The scores are stored as a dictionary with the class index as key and the score as value
+            values = list(scores.values())
+            number_of_values = len(values)
 
             # Step 2: Find the class with the highest score
-            max_class_index = None
-            max_score = float('-inf')
+            max_class_index = values.index(max(values))
 
-            for match in matches:
-                class_index = int(match[0])
-                score = float(match[1])
-                if score > max_score:
-                    max_score = score
-                    max_class_index = class_index
-
-            gauge_value = (max_class_index -1) * 25 + 12.5 # 12.5, 37.5, 62.5, 87.5
+            # Step 3: Calculate the gauge value based on the class index
+            step = 100 / number_of_values
+            gauge_value = max_class_index * step + step / 2
             
             send_post_request(gauge_value)
         except Exception as e:
